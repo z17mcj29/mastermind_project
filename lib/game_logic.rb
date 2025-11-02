@@ -1,3 +1,7 @@
+#  Built this to have the gb array be nested but source a single array.
+#  After thinking about it plan to refactor to have the source array
+#  also be a nested array the same size as the game board array.
+
 
 class GameLogic
 
@@ -120,14 +124,14 @@ class GameLogic
 end
 
 
-test_array = [
-  ["r", "r", "r", "r"],
-  ["b", "b", "b", "b"],
-  ["r", "b", "r", "g"]
-]
-test_solution = ["g", "r", "b", "r"]
-i = 1
+# test_array = [
+#   ["r", "r", "r", "r"],
+#   ["b", "b", "b", "b"],
+#   ["r", "b", "r", "g"]
+# ]
+# test_solution = ["g", "r", "b", "r"]
+# i = 1
 
-gl = GameLogic.new
+# gl = GameLogic.new
 
-p gl.count_pegs(test_array, test_solution, i)
+# p gl.count_pegs(test_array, test_solution, i)
