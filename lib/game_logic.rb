@@ -2,6 +2,11 @@
 #  After thinking about it plan to refactor to have the source array
 #  also be a nested array the same size as the game board array.
 
+# Follow up to the follow up. I'm not using the peg board here, this
+# is the source array which is a single array. So I made the source
+# array a nested array for no reason. Moving back to a single array.
+# I'm just keeping these notes for future historical reference.
+
 
 class GameLogic
 
@@ -121,7 +126,40 @@ class GameLogic
     peg_count
   end
 
+  def valid_input
+
+    input = nil
+
+    loop do
+      puts "Enter your selection!"
+      input = gets.chomp.upcase
+
+      break input if input.match?(/[ACDEGJOST]/)
+    end
+
+  end
+
+  def choose_colors(gb, i)
+    show_select = []
+    0.upto(3) do |j|    
+    selection = valid_input
+    gb[i][j] = selection
+    show_select << selection
+    print "#{show_select}"
+    puts " "
+    end
+  end
+
+  def update_pegs(gb_array, source_array, peg_array, i)
+    pegs = count_pegs(gb_array, source_array, i)
+    peg_array[i][0] = pegs[0] if pegs.length >= 1
+    peg_array[i][1] = pegs[1] if pegs.length >= 2
+    peg_array[i][2] = pegs[2] if pegs.length >= 3
+    peg_array[i][3] = pegs[3] if pegs.length >= 4
+  end
+
 end
+
 
 
 # test_array = [

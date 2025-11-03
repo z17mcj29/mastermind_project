@@ -32,6 +32,11 @@ class Communication
     puts "A - Amethyst"
     puts " "
     puts "Trust me. These are all colors."
+    puts " "
+  end
+
+  def show_choices
+    puts "(O)pal, (G)arnet, (J)ade, (D)iamond, (C)opper, (E)merald, (T)opaz, (S)apphire, (A)methyest"
   end
 
 end
