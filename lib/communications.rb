@@ -39,4 +39,14 @@ class Communication
     puts "(O)pal, (G)arnet, (J)ade, (D)iamond, (C)opper, (E)merald, (T)opaz, (S)apphire, (A)methyest"
   end
 
+  def choose_player_or_computer
+    puts "Decide if you want to take on the Mastermind challenge"
+    puts "or if you want to set the code and let the computer"
+    puts "try and guess. Press 'P' for player or 'C' for computer"
+  end
+
+  def set_code
+    puts "Please enter the code you want the computer to try and guess."
+  end
+
 end

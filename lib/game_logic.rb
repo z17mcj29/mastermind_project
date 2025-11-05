@@ -194,4 +194,16 @@ class GameLogic
     return true if i == 11
   end
 
+  def select_source_pegs(sb)    
+    show_select = []
+    0.upto(3) do |i|    
+    selection = valid_input
+    sb[i] = selection
+    show_select << selection
+    print "#{show_select}"
+    puts " "
+    end
+  
+  end
+
 end
