@@ -46,8 +46,8 @@ class GameLogic
     end
 
     if gb_array[i][3] == source_array[3]
-      gb_peg_3 = false
-      source_peg_3 = false
+      gb_peg_4 = false
+      source_peg_4 = false
       peg_count << "R"
     end
 
