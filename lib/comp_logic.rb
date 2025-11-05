@@ -8,7 +8,7 @@ class ComputerLogic
     end
 
     0.upto(3) do |k|
-      gb[i][k] = cb[k] if cb[k] != " "
+      gb[i][k] = cb[k] if cb[k] != nil
     end
 
   end
@@ -42,10 +42,10 @@ class ComputerLogic
       choice
   end
 
-  def correct_choices(sb, pb, cb, i)
+  def correct_choices(sb, gb, cb, i)
 
     0.upto(3) do |j|
-      cb[j] = sb[j] if pb[i][j] == sb[j]
+      cb[j] = sb[j] if gb[i][j] == sb[j]
     end
 
   end
