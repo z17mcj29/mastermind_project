@@ -206,4 +206,19 @@ class GameLogic
   
   end
 
+  def choose_player_or_computer(actor)
+    
+     input = nil
+
+    loop do
+      puts "P - Player : C - Computer"
+      input = gets.chomp.upcase
+      
+      break input if input.match?(/[PC]/) && input.size == 1
+    end
+    actor = true if input == "P"
+    actor = false if input == "C"
+    actor
+  end
+
 end

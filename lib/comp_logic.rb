@@ -1,10 +1,14 @@
 
 class ComputerLogic
 
-  def comp_choose(gb, i)
+  def comp_choose(gb, cb, i)
 
     0.upto(3) do |j|
     gb[i][j] = random_choice
+    end
+
+    0.upto(3) do |k|
+      gb[i][k] = cb[k] if cb[k] != " "
     end
 
   end
@@ -36,6 +40,14 @@ class ComputerLogic
         choice = "A"
     end
       choice
+  end
+
+  def correct_choices(sb, pb, cb, i)
+
+    0.upto(3) do |j|
+      cb[j] = sb[j] if pb[i][j] == sb[j]
+    end
+
   end
 
 end
