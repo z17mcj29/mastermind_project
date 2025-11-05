@@ -133,8 +133,8 @@ class GameLogic
     loop do
       puts "Enter your selection!"
       input = gets.chomp.upcase
-
-      break input if input.match?(/[ACDEGJOST]/)
+      
+      break input if input.match?(/[ACDEGJOST]/) && input.size == 1
     end
 
   end
@@ -158,18 +158,40 @@ class GameLogic
     peg_array[i][3] = pegs[3] if pegs.length >= 4
   end
 
+  def randomize_source(board)
+    # For my reference. Opal, Garnet, Jade, Diamond, Copper, Emerald, Topaz, Sapphire, Amethyest
+    for i in 0..3 do
+    random_color = rand(1..9)
+
+      case random_color
+      when 1
+        board[i] = "O"
+      when 2
+        board[i] = "G"
+      when 3
+        board[i] = "J"
+      when 4
+        board[i] = "D"
+      when 5
+        board[i] = "C"
+      when 6
+        board[i] = "E"
+      when 7
+        board[i] = "T"
+      when 8
+        board[i] = "S"
+      when 9
+        board[i] = "A"
+      end
+    end
+  end
+
+  def check_game_win(sb, pb, i)
+    return true if sb == pb[i]    
+  end
+
+  def check_game_lose(i)
+    return true if i == 11
+  end
+
 end
-
-
-
-# test_array = [
-#   ["r", "r", "r", "r"],
-#   ["b", "b", "b", "b"],
-#   ["r", "b", "r", "g"]
-# ]
-# test_solution = ["g", "r", "b", "r"]
-# i = 1
-
-# gl = GameLogic.new
-
-# p gl.count_pegs(test_array, test_solution, i)
